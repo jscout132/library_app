@@ -1,0 +1,51 @@
+@font-face{
+    font-family: "bobbyjones";
+    src: url("BobbyJones.otf") format('opentype');
+}
+
+.logo-font{
+    font-family: "bobbyjones", sans-serif;
+}
+
+.logo-color{
+    background-color: rgb(68,67,75);
+}
+
+.logo-light{
+    background-color: rgb(234,229,218);
+}
+
+.light-text{
+    color: rgb(234,229,218);
+}
+
+.nav-line{
+    max-width: 70%;
+}
+
+.logo-img{
+    max-width: 20%;
+}
+
+.body-area{
+    margin-top: 7%;
+    padding-top: 5%;
+}
+
+#header-book-text{
+    text-align: center;
+}
+
+.header-text{
+    padding-left: 2%;
+    padding-top: 2%;
+}
+
+#sign_up{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.max-h-img{
+    max-width: 100%;
+}

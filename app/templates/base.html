@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link type="text/css" rel="stylesheet" href="../static/css/style.css"/>
+<title>lib-books</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg logo-color navbar-dark py-3 fixed-top">
+        <div class="container nav-line">
+            
+            <a href="{{ url_for('site.home') }}" class="navbar-brand">
+                <img src="../static/images/lib-book-logo.png" alt="" class="logo-img">
+            </a>
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navmenu"
+            ><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="{{ url_for('site.books') }}" class="nav-link">books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('site.genre')}}" class="nav-link">genre</a>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav_item">
+                        <a href="{{ url_for('site.profile')}}" class="nav_link"></a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="{{ url_for('auth.logout') }}" class="nav_link"></a>
+                    </li>
+                    {% else %}
+
+                    <li class="nav-item">
+                        <a href="{{ url_for('auth.sign_in') }}" class="nav-link">sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('auth.sign_up') }}" class="nav-link">sign up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% block content %}
+{% endblock %}
+<footer class="logo-color">
+    <div class="container d-flex justify-content-around">
+        <div>
+            <a href="{{ url_for('site.home') }}">
+                <img src="../static/images/lib-book.png" class="logo-img" alt="">
+            </a>
+        </div>
+        {% if current_user.is_authenticated %}
+        <div>
+            <a href="{{ url_for('auth.logout') }}"><h4 class="light-text logo-font">Librarian Logout</h4></a>
+        </div>
+        {% else %}
+        <div class="pt-3">
+            <a href="{{ url_for('auth.lib_login') }}"><h4 class="light-text logo-font">Librarian Login</h4></a>
+        </div>
+        {% endif %}
+    </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

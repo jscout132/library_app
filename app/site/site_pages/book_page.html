@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="body-area">
+    <div class="container">
+        <a href="/books"><h4 class="logo-font">Back to all books</h4></a>
+    </div>
+    <div class="container">
+        <h4 class="logo-font">{{books.title}}</h4>
+        <h6 class="logo-font">{{ books.author_fname }} {{ books.author_lname }}</h6>
+        <p>Year published: {{books.year_published}}</p>
+        <p>Number of pages: {{books.length}}</p>
+        <p>Binding style: {{books.binding}}</p>
+        
+    </div>
+</div>
+
+{% endblock %}

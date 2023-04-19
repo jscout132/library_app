@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="body-area">
+    <div id="header-area" class="d-flex flex-row mb-3">
+        <div class="container">
+            <h1 id="header-book-text" class="logo-font">
+                explore our books
+            </h1>
+            <img src="../../static/images/book-shot.jpg" class="img-fluid" alt="">
+        </div>
+
+        <div class="container bg-light border py-3">
+            <h3 class="logo-font text-center">sign in here</h3>
+            <form class="" method="POST">
+                {{ form.hidden_tag() }}
+                <div class="">
+                  <label for="">Email address</label>
+                  {{ form.email(class='form-control', placeholder='Email') }}
+                </div>
+                <div class="">
+                  <label for="" class="mt-3">Password</label>
+                  {{ form.password(class='form-control', placeholder='Password') }}
+                </div>
+                {{ form.submit_button(class='btn logo-color light-text mt-3', placeholder='Enter') }}
+            </form>
+        </div>
+    </div>
+
+    <div id="book-area" class="logo-color my-3 py-3">
+        <h1 class="light-text logo-font header-text">Books from our collection</h1>
+        <div id="book-list" class="d-flex justify-content-center">
+            <div class="book rounded p-2 m-2 logo-light"><a href="books/{{books[0].isbn}}">
+                <p class="logo-light">{{ books[0]['title'] }}</p>
+                <p class="logo-light">{{ books[0]['author_fname']}} {{ books[0]['author_lname'] }}</p>
+            </a>
+            </div>
+            <div class="book rounded p-2 m-2 logo-light"><a href="books/{{books[1].isbn}}">
+                <p class="logo-light">{{ books[1]['title'] }}</p>
+                <p class="logo-light">{{ books[1]['author_fname']}} {{ books[1]['author_lname'] }}</p>
+            </a>
+            </div>
+            <div class="book rounded p-2 m-2 logo-light"><a href="books/{{books[2].isbn}}">
+                <p class="logo-light">{{ books[2]['title'] }}</p>
+                <p class="logo-light">{{ books[2]['author_fname'] }} {{ books[2]['author_lname'] }}</p>
+            </a>
+            </div>
+            <div class="book rounded p-2 m-2 logo-light"><a href="books/{{books[3].isbn}}">
+                <p class="logo-light">{{ books[3]['title'] }}</p>
+                <p class="logo-light">{{ books[3]['author_fname']}} {{ books[3]['author_lname'] }}</p>
+            </a>
+            </div>
+        </div>
+    </div>
+    <div class="body-area">
+        <p></p>
+    </div>
+</div>
+
+{% endblock %}

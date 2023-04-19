@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="body-area container"> 
+<h3 class="logo-font text-center">Available Genres</h3>
+{% for i in range(genre_set | length) %}
+        <h5 class="logo-font logo-light py-2" id="">{{genre_set[i]}}</h5>
+{% endfor %}
+
+</div>
+
+{% endblock %}
