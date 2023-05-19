@@ -20,11 +20,11 @@
           </tr>
         </thead>
         <tbody>
-            {% for i in range( books | length) %}
+            {% for i in range( books | length_) %}
           <tr>
                 <th scope="row"><a href="books/{{books[i].isbn}}">{{ books[i].title }}</a></th>
                 <td>{{books[i].author_fname}} {{books[i].author_lname}}</td>
-                <td>{{books[i].length}}</td>
+                <td>{{books[i].length_}}</td>
                 <td>{{books[i].year_published}}</td>
                 <td>{{books[i].binding}}</td>
                 <td>{{books[i].quantity}}</td>  
@@ -47,7 +47,7 @@
           </tr>
         </thead>
         <tbody>
-            {% for i in range( users | length) %}
+            {% for i in range( users | length_) %}
           <tr>
                 <td>{{ users[i].fname.title() }}</td>
                 <td>{{users[i].lname.title()}}</td>

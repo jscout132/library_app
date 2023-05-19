@@ -12,7 +12,7 @@ def addbooks(current_user_token):
     title = request.json['title']
     author_fname = request.json['author_fname']
     author_lname = request.json['author_lname']
-    length = request.json['length']
+    length_ = request.json['length_']
     genre = request.json['genre']
     binding = request.json['binding']
     quantity = request.json['quantity']
@@ -23,7 +23,7 @@ def addbooks(current_user_token):
                      title = title,
                      author_fname= author_fname,
                      author_lname=author_lname,
-                     length=length,
+                     length_=length_,
                      genre=genre,
                      binding=binding,
                      quantity=quantity,
@@ -76,7 +76,7 @@ def update_book(current_user_token, isbn):
     book.title = request.json['title']
     book.author_fname = request.json['author_fname']
     book.author_lname = request.json['author_lname']
-    book.length = request.json['length']
+    book.length_ = request.json['length_']
     book.genre = request.json['genre']
     book.binding = request.json['binding']
     book.quantity = request.json['quantity']

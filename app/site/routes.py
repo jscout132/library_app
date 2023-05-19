@@ -34,8 +34,8 @@ def home():
 def books():
     books = Books.query.all()
     #makes a list of all books that are less than 300 pages
-    quick_read = [i.title for i in books if i.length < 300]
-    qr_isbn = [i.isbn for i in books if i.length <300]
+    quick_read = [i.title for i in books if i.length_ < 300]
+    qr_isbn = [i.isbn for i in books if i.length_ <300]
 
     #makes a list of all books published since 2017
     new_books = [i.title for i in books if i.year_published > 2017]

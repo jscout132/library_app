@@ -23,7 +23,7 @@ def upgrade():
     sa.Column('title', sa.String(length=400), nullable=True),
     sa.Column('author_fname', sa.String(length=150), nullable=True),
     sa.Column('author_lname', sa.String(length=150), nullable=True),
-    sa.Column('length', sa.Integer(), nullable=True),
+    sa.Column('length_', sa.Integer(), nullable=True),
     sa.Column('genre', sa.String(length=150), nullable=True),
     sa.Column('binding', sa.String(length=10), nullable=True),
     sa.Column('quantity', sa.Integer(), nullable=True),

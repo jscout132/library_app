@@ -23,4 +23,7 @@ where isbn = '9781419732517'
 alter table books
 add column lib_id VARCHAR(10) references librarian(id)
 
-select * from "user"
+select * from librarian 
+
+alter table books 
+rename column "length" to length_

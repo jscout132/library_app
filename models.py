@@ -81,7 +81,7 @@ class Books(db.Model, UserMixin):
     title = db.Column(db.String(400), default='')
     author_fname = db.Column(db.String(150), default='')
     author_lname = db.Column(db.String(150), default='')
-    length = db.Column(db.Integer)
+    length_ = db.Column(db.Integer)
     genre = db.Column(db.String(150))
     binding = db.Column(db.String(10))
     quantity = db.Column(db.Integer)
@@ -89,12 +89,12 @@ class Books(db.Model, UserMixin):
     lib_id = db.Column(db.String, db.ForeignKey('librarian.id'))
     
 
-    def __init__(self, isbn, title, author_fname, author_lname, length, genre, binding, quantity, year_published, lib_id):
+    def __init__(self, isbn, title, author_fname, author_lname, length_, genre, binding, quantity, year_published, lib_id):
         self.isbn = isbn
         self.title = title
         self.author_fname = author_fname
         self.author_lname = author_lname
-        self.length = length
+        self.length_ = length_
         self.genre = genre
         self.binding = binding
         self.quantity = quantity
@@ -129,7 +129,7 @@ class BookSchema(ma.Schema):
                   'title', 
                   'author_fname',
                   'author_lname',
-                  'length',
+                  'length_',
                   'genre', 
                   'binding',
                   'quantity',

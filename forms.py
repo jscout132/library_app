@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, IntegerField, PasswordField, DateField
+from wtforms import StringField, IntegerField, SubmitField, PasswordField, DateField
 from wtforms.validators import DataRequired, Email
 
 class UserLogin(FlaskForm):
@@ -33,7 +33,7 @@ class AddBook(FlaskForm):
     title = StringField('Book Title', validators=[DataRequired()])
     author_fname = StringField('Author First Name', validators=[DataRequired()])
     author_lname = StringField('Author Last Name', validators=[DataRequired()])
-    length = StringField('Book Length', validators=[DataRequired()])
+    length_ = IntegerField('Book Length', validators=[DataRequired()])
     genre = StringField('Book Genre', validators=[DataRequired()])
     binding = StringField('Type of Book Binding', validators=[DataRequired()])
     quantity = IntegerField('Number of Book', validators=[DataRequired()])
